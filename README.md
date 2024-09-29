@@ -32,7 +32,7 @@ Das Skript beginnt mit einem Discovery-Prozess, bei dem es nach Aruba CX Switche
 python ultra.py
 ```
 
-Das Skript wird dich fragen, ob du den Discovery-Prozess starten möchtest:
+Das Skript wird dich fragen, ob du den Discovery-Prozess starten möchtest[Empfehlung: min. 5 Minuten laufen lassen]:
 
 ```
 Möchten Sie den Scan (Discovery) durchführen? (y/n):
