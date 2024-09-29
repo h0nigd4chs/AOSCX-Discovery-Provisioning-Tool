@@ -91,7 +91,7 @@ Jeder Befehl wird auf den Switches per SSH ausgeführt.
 
 Jede SSH-Sitzung wird in einer Log-Datei gespeichert. Die Log-Dateien werden im Format `session_log_<IP-Adresse>.txt` erstellt, z. B. `session_log_192.168.1.1.txt`.
 
-## Anpassungen
+## Anpassungen (Wichtig! PASSWORT ÄNDERN!)
 
 Falls du Anpassungen an den Konfigurationsbefehlen oder den Hostnamen vornehmen möchtest, kannst du dies im Skript im Abschnitt `command_list` tun:
 
