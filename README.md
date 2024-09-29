@@ -32,10 +32,10 @@ Das Skript beginnt mit einem Discovery-Prozess, bei dem es nach Aruba CX Switche
 python ultra.py
 ```
 
-Das Skript wird dich fragen, ob du den Discovery-Prozess starten möchtest[Empfehlung: min. 5 Minuten laufen lassen]:
+Das Skript wird dich fragen, ob du den Discovery-Prozess starten möchtest, wir empfehlen hier mal 5 Minuten druchlaufen zu lassen, da manche Switche Zeit brauchen obwohl sie entdeckt wurden:
 
 ```
-Möchten Sie den Scan (Discovery) durchführen? (y/n):
+Möchten Sie den Scan (Discovery) durchführen? [Empfehlung: min. 5 Minuten laufen lassen](y/n):
 ```
 
 Falls **ja**, wird das Skript DHCP-Requests überwachen und gefundene Geräte in die Datei `dhcp_devices.csv` schreiben.
