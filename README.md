@@ -1,4 +1,4 @@
-# Aruba CX Initial Config Tool
+# AOS CX Discovery Provisioning Tool
 
 Dieses Python-Skript automatisiert den Discovery-Prozess von Aruba CX Switches im Netzwerk und konfiguriert sie mit spezifischen Parametern. Es basiert auf **Scapy** und **Netmiko**, um DHCP-Requests zu überwachen und anschließend auf den gefundenen Switches Konfigurationsbefehle auszuführen. Jeder Switch erhält dabei einen individuellen Hostnamen.
 
