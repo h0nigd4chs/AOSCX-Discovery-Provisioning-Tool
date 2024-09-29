@@ -57,7 +57,7 @@ Falls **ja**, wird das Skript eine SSH-Verbindung zu jedem Gerät herstellen und
 Nach erfolgreicher Konfiguration wird folgende Meldung ausgegeben:
 
 ```
-PROVISIONIERUNG ERFOLGREICH BEENDET! Tool by fre4ky & h0nigd4chs
+PROVISIONIERUNG ERFOLGREICH BEENDET! Tool by fre4ki & h0nigd4chs
 ```
 
 ### Individuelle Hostnamen
