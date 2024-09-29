@@ -20,4 +20,99 @@ Um die erforderlichen Pakete zu installieren, kannst du den folgenden Befehl aus
 
 ```bash
 pip install scapy netmiko
+```
 
+## Verwendung
+
+### 1. **Discovery-Modus:**
+
+Das Skript beginnt mit einem Discovery-Prozess, bei dem es nach Aruba CX Switches im Netzwerk sucht. Dazu musst du ein Netzwerk-Interface auswählen, das überwacht werden soll.
+
+```bash
+python ultra.py
+```
+
+Das Skript wird dich fragen, ob du den Discovery-Prozess starten möchtest:
+
+```
+Möchten Sie den Scan (Discovery) durchführen? (y/n):
+```
+
+Falls **ja**, wird das Skript DHCP-Requests überwachen und gefundene Geräte in die Datei `dhcp_devices.csv` schreiben.
+
+### 2. **Provisionierung:**
+
+Nach dem Discovery-Prozess wird das Skript die gefundenen Geräte automatisch konfigurieren. Hierbei erhält jeder Switch einen eindeutigen Hostnamen und die vordefinierten Befehle (wie das Setzen von VLANs und Passworten) werden ausgeführt.
+
+Das Skript fragt anschließend, ob die Provisionierung gestartet werden soll:
+
+```
+Möchten Sie mit der Provisionierung beginnen? (y/n):
+```
+
+Falls **ja**, wird das Skript eine SSH-Verbindung zu jedem Gerät herstellen und die Konfiguration anwenden.
+
+### 3. **Erfolgsmeldung:**
+
+Nach erfolgreicher Konfiguration wird folgende Meldung ausgegeben:
+
+```
+PROVISIONIERUNG ERFOLGREICH BEENDET! Tool by fre4ky & h0nigd4chs
+```
+
+### Individuelle Hostnamen
+
+Der erste Switch wird mit dem Hostnamen `pyswitch01` konfiguriert, der zweite mit `pyswitch02` und so weiter.
+
+## CSV-Datei `dhcp_devices.csv`
+
+Diese Datei wird nach dem Discovery-Prozess erstellt und enthält die gefundenen Geräte. Sie hat folgendes Format:
+
+```
+MAC-Adresse, IP-Adresse, Option 60
+```
+
+Die Provisionierung basiert auf den IP-Adressen, die in dieser Datei gespeichert sind.
+
+## Konfigurationsbefehle
+
+Folgende Befehle werden auf jedem Switch ausgeführt:
+
+- **Hostname setzen**: `hostname pyswitchXX` (wobei `XX` eine laufende Nummer ist)
+- **Benutzerpasswort setzen**: `user admin password plaintext admin`
+- **VLANs konfigurieren**:
+  - VLAN 105: `vlan 105 name TEST_105`
+  - VLAN 106: `vlan 106 name TEST_106`
+  - VLAN 107: `vlan 107 name TEST_107`
+  
+Jeder Befehl wird auf den Switches per SSH ausgeführt.
+
+## Log-Dateien
+
+Jede SSH-Sitzung wird in einer Log-Datei gespeichert. Die Log-Dateien werden im Format `session_log_<IP-Adresse>.txt` erstellt, z. B. `session_log_192.168.1.1.txt`.
+
+## Anpassungen
+
+Falls du Anpassungen an den Konfigurationsbefehlen oder den Hostnamen vornehmen möchtest, kannst du dies im Skript im Abschnitt `command_list` tun:
+
+```python
+command_list = [
+    f'conf t',
+    f'hostname {hostname}',
+    'user admin password plaintext admin',
+    'vlan 105',
+    'name  TEST_105',
+    'vlan 106',
+    'name  TEST_106',
+    'vlan 107',
+    'name  TEST_107',
+]
+```
+
+## Autor
+
+Dieses Skript wurde entwickelt von **fre4ky** & **h0nigd4chs**.
+
+## Lizenz
+
+Dieses Projekt steht unter der MIT-Lizenz. Siehe die [LICENSE](LICENSE)-Datei für Details.
