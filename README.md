@@ -54,7 +54,7 @@ Falls **ja**, wird das Skript eine SSH-Verbindung zu jedem Gerät herstellen und
 
 ### 3. **Erfolgsmeldung:**
 
-Nach erfolgreicher Konfiguration wird folgende Meldung ausgegeben:
+Nach erfolgreicher Konfiguration und 'write memory' wird folgende Meldung ausgegeben:
 
 ```
 PROVISIONIERUNG ERFOLGREICH BEENDET! Tool by fre4ki & h0nigd4chs
