@@ -19,7 +19,7 @@ Stelle sicher, dass folgende Python-Bibliotheken installiert sind:
 Um die erforderlichen Pakete zu installieren, kannst du den folgenden Befehl ausführen:
 
 ```bash
-pip install scapy netmiko
+python -m pip install scapy netmiko
 ```
 
 ## Verwendung
