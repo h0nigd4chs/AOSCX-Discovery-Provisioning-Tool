@@ -29,7 +29,7 @@ python -m pip install scapy netmiko
 Das Skript beginnt mit einem Discovery-Prozess, bei dem es nach Aruba CX Switches im Netzwerk sucht. Dazu musst du ein Netzwerk-Interface auswählen, das überwacht werden soll.
 
 ```bash
-python ultra.py
+python aoscxtool.py
 ```
 
 Das Skript wird dich fragen, ob du den Discovery-Prozess starten möchtest, wir empfehlen hier mal 5 Minuten druchlaufen zu lassen, da manche Switche Zeit brauchen obwohl sie entdeckt wurden:
