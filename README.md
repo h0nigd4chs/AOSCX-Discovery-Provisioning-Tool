@@ -93,7 +93,7 @@ Jede SSH-Sitzung wird in einer Log-Datei gespeichert. Die Log-Dateien werden im 
 
 ## Anpassungen (Wichtig! PASSWORT ÄNDERN!)
 
-Falls du Anpassungen an den Konfigurationsbefehlen oder den Hostnamen vornehmen möchtest, kannst du dies im Skript im Abschnitt `command_list` tun:
+Falls du Anpassungen an den Konfigurationsbefehlen oder den Hostnamen vornehmen möchtest, kannst du dies im Skript im Abschnitt `command_list` tun. Du kannst auch je nach Bedarf weitere Zeilen mit Kommandos hinzufügen, achte dabei die Kommandos in '' zu schreiben geolgt von einem , (KOMMA!):
 
 ```python
 command_list = [
