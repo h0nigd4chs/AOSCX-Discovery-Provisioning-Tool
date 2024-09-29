@@ -109,9 +109,12 @@ command_list = [
 ]
 ```
 
-## Autor
+## Contributors
 
-Dieses Skript wurde entwickelt von **fre4ky** & **h0nigd4chs**.
+Vielen Dank an die folgenden Personen, die zu diesem Projekt beigetragen haben:
+
+- fre4ki(https://github.com/fre4ki) – hat bei der Entwicklung des Tools mitgearbeitet
+
 
 ## Lizenz
 
