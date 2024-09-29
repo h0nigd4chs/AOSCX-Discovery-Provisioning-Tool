@@ -1,2 +1,93 @@
-# aoscx-discovery-provisioning-tool
-Aruba CX Discovery and Provisioning Tool [German]
+Aruba CX Initial Config Tool
+Dieses Python-Skript automatisiert den Discovery-Prozess von Aruba CX Switches im Netzwerk und konfiguriert sie mit spezifischen Parametern. Es basiert auf Scapy und Netmiko, um DHCP-Requests zu überwachen und anschließend auf den gefundenen Switches Konfigurationsbefehle auszuführen. Jeder Switch erhält dabei einen individuellen Hostnamen.
+
+Funktionen
+DHCP Discovery: Überwacht den Netzwerkverkehr auf DHCP-Requests und protokolliert gefundene Geräte in einer CSV-Datei.
+Individuelle Hostnamen: Konfiguriert jeden gefundenen Switch mit einem eindeutigen Hostnamen (z. B. pyswitch01, pyswitch02, etc.).
+Switch-Konfiguration: Führt automatisch vordefinierte Konfigurationsbefehle auf jedem Switch aus, wie die Erstellung von VLANs und das Setzen eines Benutzerpassworts.
+Logging: Erstellt ein Session-Log für jeden konfigurierten Switch, um die ausgeführten Befehle und Rückmeldungen zu dokumentieren.
+Voraussetzungen
+Stelle sicher, dass folgende Python-Bibliotheken installiert sind:
+
+Scapy
+Netmiko
+Um die erforderlichen Pakete zu installieren, kannst du den folgenden Befehl ausführen:
+
+bash
+Code kopieren
+pip install scapy netmiko
+Verwendung
+1. Discovery-Modus:
+Das Skript beginnt mit einem Discovery-Prozess, bei dem es nach Aruba CX Switches im Netzwerk sucht. Dazu musst du ein Netzwerk-Interface auswählen, das überwacht werden soll.
+
+bash
+Code kopieren
+python ultra.py
+Das Skript wird dich fragen, ob du den Discovery-Prozess starten möchtest:
+
+scss
+Code kopieren
+Möchten Sie den Scan (Discovery) durchführen? (y/n):
+Falls ja, wird das Skript DHCP-Requests überwachen und gefundene Geräte in die Datei dhcp_devices.csv schreiben.
+
+2. Provisionierung:
+Nach dem Discovery-Prozess wird das Skript die gefundenen Geräte automatisch konfigurieren. Hierbei erhält jeder Switch einen eindeutigen Hostnamen und die vordefinierten Befehle (wie das Setzen von VLANs und Passworten) werden ausgeführt.
+
+Das Skript fragt anschließend, ob die Provisionierung gestartet werden soll:
+
+bash
+Code kopieren
+Möchten Sie mit der Provisionierung beginnen? (y/n):
+Falls ja, wird das Skript eine SSH-Verbindung zu jedem Gerät herstellen und die Konfiguration anwenden.
+
+3. Erfolgsmeldung:
+Nach erfolgreicher Konfiguration wird folgende Meldung ausgegeben:
+
+csharp
+Code kopieren
+PROVISIONIERUNG ERFOLGREICH BEENDET! Tool by fre4ky & h0nigd4chs
+Individuelle Hostnamen
+Der erste Switch wird mit dem Hostnamen pyswitch01 konfiguriert, der zweite mit pyswitch02 und so weiter.
+
+CSV-Datei dhcp_devices.csv
+Diese Datei wird nach dem Discovery-Prozess erstellt und enthält die gefundenen Geräte. Sie hat folgendes Format:
+
+rust
+Code kopieren
+MAC-Adresse, IP-Adresse, Option 60
+Die Provisionierung basiert auf den IP-Adressen, die in dieser Datei gespeichert sind.
+
+Konfigurationsbefehle
+Folgende Befehle werden auf jedem Switch ausgeführt:
+
+Hostname setzen: hostname pyswitchXX (wobei XX eine laufende Nummer ist)
+Benutzerpasswort setzen: user admin password plaintext admin
+VLANs konfigurieren:
+VLAN 105: vlan 105 name TEST_105
+VLAN 106: vlan 106 name TEST_106
+VLAN 107: vlan 107 name TEST_107
+Jeder Befehl wird auf den Switches per SSH ausgeführt.
+
+Log-Dateien
+Jede SSH-Sitzung wird in einer Log-Datei gespeichert. Die Log-Dateien werden im Format session_log_<IP-Adresse>.txt erstellt, z. B. session_log_192.168.1.1.txt.
+
+Anpassungen
+Falls du Anpassungen an den Konfigurationsbefehlen oder den Hostnamen vornehmen möchtest, kannst du dies im Skript im Abschnitt command_list tun:
+
+python
+Code kopieren
+command_list = [
+    f'conf t',
+    f'hostname {hostname}',
+    'user admin password plaintext admin',
+    'vlan 105',
+    'name  TEST_105',
+    'vlan 106',
+    'name  TEST_106',
+    'vlan 107',
+    'name  TEST_107',
+]
+Autor
+Dieses Skript wurde entwickelt von fre4ky & h0nigd4chs.
+
+Lizenz
