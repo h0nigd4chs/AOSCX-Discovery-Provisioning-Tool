@@ -113,18 +113,14 @@ command_list = [
 
 Vielen Dank an die folgenden Personen, die zu diesem Projekt beigetragen haben:
 
-- fre4ki(https://github.com/fre4ki) – hat bei der Entwicklung des Tools mitgearbeitet
+- [fre4ki](https://github.com/fre4ki) – hat bei der Entwicklung des Tools mitgearbeitet
 
 
 ## Lizenz
 
-MIT License
+[MIT License](https://github.com/h0nigd4chs/aoscx-discovery-provisioning-tool/edit/main/LICENSE)
 
 Copyright (c) 2024 h0nigd4chs
 
-Hiermit wird unentgeltlich jeder Person, die eine Kopie der Software und der zugehörigen Dokumentationen (die "Software") erhält, die Erlaubnis erteilt, uneingeschränkt mit der Software zu handeln, einschließlich ohne Einschränkung dem Recht, sie zu verwenden, zu kopieren, zu verändern, zusammenzuführen, zu veröffentlichen, zu verbreiten, zu unterlizenzieren und zu verkaufen, und Personen, die die Software erhalten, diese Rechte zu gewähren, unter den folgenden Bedingungen:
 
-Der obige Urheberrechtshinweis und dieser Erlaubnishinweis sind in allen Kopien oder wesentlichen Teilen der Software beizufügen.
-
-DIE SOFTWARE WIRD OHNE JEDE AUSDRÜCKLICHE ODER IMPLIZIERTE GARANTIE BEREITGESTELLT, EINSCHLIESSLICH DER GARANTIE DER MARKTFÄHIGKEIT, DER EIGNUNG FÜR EINEN BESTIMMTEN ZWECK UND DER NICHTVERLETZUNG. IN KEINEM FALL SIND DIE AUTOREN ODER URHEBER RECHTLICH HAFTBAR FÜR JEGLICHE ANSPRÜCHE, SCHÄDEN ODER ANDERE VERPFLICHTUNGEN, OB AUS EINEM VERTRAGSVERHÄLTNIS, EINEM UNRECHTMÄSSIGEN HANDELN ODER ANDERWEITIG, DIE AUS DER SOFTWARE ODER DER VERWENDUNG ODER ANDEREN GESCHÄFTEN MIT DER SOFTWARE ENTSTEHEN.
 
